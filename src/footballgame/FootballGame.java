@@ -6,9 +6,14 @@ public class FootballGame {
 
     ArrayList<Reporter> reporter = new ArrayList<>();
     ArrayList<Fan> fans = new ArrayList<>();
+    ArrayList<ScoreBoard> scoreBoards = new ArrayList<>();
 
     public FootballGame(){
 
+    }
+
+    public void addScoreBoard(ScoreBoard scoreboard) {
+        this.scoreBoards.add(scoreboard);
     }
 
     public void addReporter(Reporter reporter) {
@@ -24,9 +29,14 @@ public class FootballGame {
         for(Reporter repo : reporter) {
             repo.reactToGoal(scoringTeam);
 
+
         }
         for(Fan fan : fans) {
             fan.reactToGoal(scoringTeam);
+        }
+
+        for(ScoreBoard scoreBoard : scoreBoards) {
+            scoreBoard.reactToGoal(scoringTeam);
         }
 
     }
